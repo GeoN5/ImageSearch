@@ -1,7 +1,8 @@
-package com.example.mvvm_searchimage
+package com.example.mvvm_searchimage.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mvvm_searchimage.R
 
 class MainActivity : AppCompatActivity() {
 
