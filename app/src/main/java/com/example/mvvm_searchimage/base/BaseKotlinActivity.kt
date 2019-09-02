@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
-abstract class BaseKotlinActivity<T : ViewDataBinding, R : BaseKotlinViewModel> : AppCompatActivity() {
+abstract class BaseKotlinActivity<T : ViewDataBinding, R : BaseKotlinViewModel> :
+    AppCompatActivity() {
 
     lateinit var viewDataBinding: T
 
@@ -14,7 +15,7 @@ abstract class BaseKotlinActivity<T : ViewDataBinding, R : BaseKotlinViewModel> 
     abstract val layoutResourceId: Int
 
     //viewModel로 쓰일 변수
-    abstract val viewModel:R
+    abstract val viewModel: R
 
     //레이아웃을 띄운 직후 호출. 뷰나 액티비티의 속성 등을 초기화
     //ex) 리사이클러뷰,툴바,드로어뷰..
@@ -35,7 +36,7 @@ abstract class BaseKotlinActivity<T : ViewDataBinding, R : BaseKotlinViewModel> 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewDataBinding = DataBindingUtil.setContentView(this,layoutResourceId)
+        viewDataBinding = DataBindingUtil.setContentView(this, layoutResourceId)
 
         initStartView()
         initDataBinding()
